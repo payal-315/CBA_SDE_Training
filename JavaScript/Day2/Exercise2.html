@@ -1,0 +1,27 @@
+<!-- Exercise 2: User Age Category
+Write a program that: Stores an age in a variable. Displays: "Child" if age < 13, "Teenager" if age is between 13 and 19,
+  "Adult" if age is between 20 and 59, "Senior Citizen" if age >= 60. Use statements. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let age=18;
+        if(age<13){
+            document.write("Child")
+        }else if(age>=13 && age<=19){
+            document.write("Teenager");
+        }else if(age>=20 && age<=59){
+            document.write("Adult");
+        }
+        else{
+            document.write("Senior Citizen")
+        }
+    </script>
+</body>
+</html>
