@@ -1,0 +1,29 @@
+<!-- Exercise 11 :
+Create a program that: Stores numbers from 1 to 50.
+Prints: "Fizz" if divisible by 3, "Buzz" if divisible by 5, "FizzBuzz" if divisible by both, Otherwise print the number. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(let i=1;i<=50;i++){
+            if(i%3==0 && i%5==0){
+                document.write("<br>FizzBuzz")
+            }else if(i%3==0){
+                document.write("<br>Fizz")
+            }else if(i%5==0){
+                document.write("<br>Buzz")
+            }else{
+                document.write("<br>")
+                document.write(i)
+            }
+        }
+
+    </script>
+</body>
+</html>
