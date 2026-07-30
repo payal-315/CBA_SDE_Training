@@ -1,0 +1,35 @@
+<!-- Exercise 7: Login System Using switch
+Create a simple login system. let role = "admin"; 
+Using display: "Full Access" for admin, "Limited Access" for manager, "Read Only Access" for employee, "Invalid Role" otherwise. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let role="admin"
+
+        switch(role){
+            case "admin":
+                document.write("Full access")
+                break;
+            
+            case "manager":
+                document.write("Limited access")
+                break;
+
+            case "employee":
+                document.write("Read only access")
+                break;
+
+            default:
+                document.write("Invalid Role")
+        }
+
+    </script>
+</body>
+</html>
