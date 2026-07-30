@@ -1,0 +1,34 @@
+<!-- Exercise 5: Count Positive, Negative and Zero
+Given an array: let numbers = [10, -5, 0, 20, -8, 15, 0]; Use a loop to count: Positive numbers, Negative numbers, Zeros.
+Print all three counts. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers=[10,-6,0,20,-8,15,0];
+        let posCount=0;
+        let negCount=0;
+        let zero=0;
+        for(let i=0;i<numbers.length;i++){
+           if(numbers[i]>0){
+            posCount++;
+           }else if(numbers[i]<0){
+            negCount++;
+           }else{
+            zero++;
+           }
+
+        }
+        document.write("<br>Positive Numbers: "+posCount);
+        document.write("<br>Negative Numbers: "+negCount);
+        document.write("<br>Zero: "+zero);
+
+    </script>
+</body>
+</html>
