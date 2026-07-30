@@ -1,0 +1,42 @@
+<!-- Exercise 10: Student Marks Analysis
+Given: let marks = [78, 45, 89, 32, 91, 67, 55];
+Write a program to: Count how many students passed (marks >= 50). Count how many failed. Find the highest mark. Find the average marks. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let marks=[78,45,89,32,91,67,55];
+
+        let pass=0;
+        let fail=0;
+        let highest=marks[0]
+        let sums=0;
+        for(let i=0;i<marks.length;i++){
+            if(marks[i]>=50){
+                pass++;
+            }else{
+                fail++;
+            }
+
+            if(marks[i]>highest){
+                highest=marks[i]
+            }
+
+            sum+=i;
+        }
+        let avg=sums/marks.length
+
+        document.write("<br>Passed: "+pass)
+        document.write("<br>failed: "+fail)
+        document.write("<br>Highest: "+highest)
+        document.write("<br>Average: "+avg)
+
+    </script>
+</body>
+</html>
