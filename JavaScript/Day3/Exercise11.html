@@ -1,0 +1,28 @@
+<!-- Exercise 11: Total Marks Using forEach()
+Given: const marks = [75, 82, 91, 68, 88];
+Use forEach() to calculate the total marks and then print the average. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const marks = [75, 82, 91, 68, 88];
+
+        let total=0
+
+        marks.forEach(function(mark){
+            total+=mark;
+        })
+
+        let avg=total/marks.length
+
+        document.write("<br>Total: "+total)
+        document.write("<br>Average: "+avg)
+    </script>
+</body>
+</html>
