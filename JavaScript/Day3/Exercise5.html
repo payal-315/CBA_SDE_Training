@@ -1,0 +1,35 @@
+<!-- Exercise 5: Arrow Function Calculator
+Create an arrow function that accepts two numbers and an operator (+, -, *, /) and returns the result. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const calculate = (a, b, operator) => {
+            switch (operator) {
+                case "+":
+                    document.write(a + b+"<br>");
+                    break;
+                case "-":
+                    document.write(a - b+"<br>");
+                    break;
+                case "*":
+                    document.write(a*b+"<br>");
+                    break;
+                case "/":
+                    document.write(a/b+"<br>");
+                    break;
+                default:
+                    document.write("Invalid Operator");
+                    break;
+            }
+        };
+        calculate(8,4,"/");
+    </script>
+</body>
+</html>
