@@ -1,0 +1,26 @@
+<!-- Exercise 4: Count Vowels
+Write a function countVowels(str) that returns the number of vowels in a string.
+countVowels("JavaScript") returns 3 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countVowels(str){
+            let count=0
+            for(let i=0;i<str.length;i++){
+                if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u'){
+                    count++;
+                }
+            }
+            document.write("<br>"+count+"<br>")
+        }
+        countVowels('JavaScript')
+    </script>
+</body>
+</html>
