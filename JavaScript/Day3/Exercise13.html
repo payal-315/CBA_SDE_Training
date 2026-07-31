@@ -1,0 +1,57 @@
+<!-- Exercise 13: Given: const numbers = [12, 5, 8, 19, 22, 7, 30];
+Without using built-in methods like filter() or reduce(): Print only even numbers. Find the largest number. 
+Find the sum of all numbers. Create a new array containing numbers greater than 10. Stop the loop if the number 22 is encountered. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const num = [12, 5, 8, 19, 22, 7, 30];
+
+        let largest = num[0];
+        let sums = 0;
+        let greaterthan10 = [];
+
+        document.write("<br>Even Numbers: ");
+
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] % 2 === 0) {
+                document.write(num[i]);
+            }
+        }
+
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] > largest) {
+                largest = num[i];
+            }
+        }
+        document.write("<br>Largest: "+largest)
+        
+        for (let i = 0; i < num.length; i++) {
+            sums += num[i];
+        }
+        document.write("<br>sum: "+sums)
+
+
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] > 10) {
+                greaterthan10.push(num[i]);
+            }
+        }
+        document.write("<br>New Array: ["+greaterthan10+" ]")
+
+
+        for (let i = 0; i < num.length; i++) {
+            if (num[i] == 22) {
+                document.write("<br>22 encountered. Loop stopped.");
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
