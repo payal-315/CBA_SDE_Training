@@ -1,0 +1,38 @@
+<!-- Exercise 6: Scope Challenge
+Predict the output.
+let x = 50;
+function demo() {
+let x = 20;
+console.log(x);
+}
+demo();
+console.log(x);
+Explain why the outputs are different. -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let x=50;
+
+        function demo() {
+            let x = 20;
+            document.write(x+"<br>");
+        }
+        demo();
+        document.write(x+"<br>"); 
+
+        //outputs are different because let is block scope due to which 
+      //inside the demo block x value is 20 which is shadowing x=50 which is in the global scope.
+
+    </script>
+</body>
+</html>
