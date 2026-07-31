@@ -1,0 +1,23 @@
+<!-- Exercise 9: Difference Between slice() and splice()
+Given: let colors = ["Red","Blue","Green","Yellow","Pink"];
+Create a new array containing "Blue" and "Green" using slice(). Remove "Green" and "Yellow" using splice(). Print both arrays. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let colors = ["Red","Blue","Green","Yellow","Pink"];
+
+        let slice = colors.slice(1, 3);
+        colors.splice(2, 2);
+
+        document.write("<br>Slice: "+slice)
+        document.write("<br>Splice: "+colors)
+    </script>
+</body>
+</html>
