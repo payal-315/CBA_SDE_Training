@@ -1,0 +1,29 @@
+<!-- Exercise 1: Guess the Secret Number
+Using a , repeatedly ask for numbers from an array until the secret number is found.
+const guesses = [2, 5, 9, 12, 18]; const secret = 12;
+Print: Wrong guess, Wrong guess ,Wrong guess, Correct! -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const guesses=[2,5,9,12,18]
+        const secret=12;
+
+        for(let i=0;i<guesses.length;i++){
+            if(guesses[i]==secret){
+                document.write("<br>correct!");
+                break;
+            }else{
+                document.write("<br>Wrong guess")
+            }
+        }
+    </script>
+</body>
+</html>
