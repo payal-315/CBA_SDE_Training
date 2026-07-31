@@ -1,0 +1,22 @@
+<!-- Exercise 8: 11. Student List Manager
+Given: let students = ["Amit", "Neha", "Raj"];
+Perform the following operations: Add "Priya" at the end. Add "Rohan" at the beginning. Remove the last student. Print the final array. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let students = ["Amit", "Neha", "Raj"];
+
+        students.push("Priya")
+        students.unshift("Rohan")
+        students.pop();
+        document.write("<br>["+students+"]")
+    </script>
+</body>
+</html>
