@@ -1,0 +1,51 @@
+<!-- Exercise 6: Dynamic Object Properties
+Given: const user = {name: "Rahul",age: 25};
+Add email dynamically using bracket notation. Delete the age property. Print all keys and values. Check whether the property email exists. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = {
+            name: "Rahul",
+            age: 25
+        };
+
+
+        user["email"] = "rahul@gmail.com";
+
+        document.write("<br>After Adding Email:</b><br>");
+        document.write("Name: " + user.name + "<br>");
+        document.write("Email: " + user.email + "<br>");
+
+
+        delete user.age;
+
+        document.write("<br>After Deleting Age:<br>");
+        document.write(JSON.stringify(user) + "<br><br>");
+
+
+        document.write("Keys and Values:<br>");
+        for (let key in user) {
+            document.write(`${key} : ${user[key]}<br>`);
+        }
+
+
+        document.write("<br>Email Exists?<br>");
+
+        if ("email" in user) {
+            document.write("Yes, email property exists.");
+        } else {
+            document.write("No, email property does not exist.");
+        }
+
+
+    </script>
+</body>
+</html>
