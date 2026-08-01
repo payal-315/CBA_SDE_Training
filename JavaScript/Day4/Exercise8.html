@@ -1,0 +1,57 @@
+<!-- Exercise 8: Customer Order System
+Create an array: const orders = [{orderId: 101, customer: "John", items: ["Laptop", "Mouse"]},
+                              {orderId: 102,customer: "Emma",items: ["Phone", "Charger"]}];
+Add a new item to John's order. Find the customer who ordered a Phone. Print all ordered items in a single array.
+Count the total number of items ordered. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const orders = [
+            {
+                orderId: 101,
+                customer: "John",
+                items: ["Laptop", "Mouse"]
+            },
+            {
+                orderId: 102,
+                customer: "Emma",
+                items: ["Phone", "Charger"]
+            }
+        ];
+
+
+        let johnOrder = orders.find(order => order.customer === "John");
+        johnOrder.items.push("Keyboard");
+
+        document.write("<br>John's Updated Order: [ ");
+        document.write(johnOrder.items.join(", ") + " ]");
+
+
+        let phoneCustomer = orders.find(order => order.items.includes("Phone"));
+
+        document.write("<br><br>Customer Who Ordered a Phone: ");
+        document.write(phoneCustomer.customer);
+
+
+        let allItems = orders.flatMap(order => order.items);
+
+        document.write("<br><br>All Ordered Items: [ ");
+        document.write(allItems.join(", ") + " ]<br>");
+
+
+        let totalItems = allItems.length;
+
+        document.write("<br>Total Number of Items Ordered: ");
+        document.write(totalItems);
+
+    </script>
+</body>
+</html>
