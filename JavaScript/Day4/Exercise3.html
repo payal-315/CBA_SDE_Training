@@ -1,0 +1,54 @@
+<!-- Exercise 3: Student Report System
+Create an array of students.
+const students = [{name: "Alice",marks: [80, 85, 90]}, {name: "Bob",marks: [60, 70, 75]}, {name: "Charlie",marks: [95, 92, 98]}];
+Calculate the average marks of each student. Find the topper. Create an array of student names whose average is above 80. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const students = [
+            {
+                name: "Alice",
+                marks: [80, 85, 90]
+            },
+            {
+                name: "Bob",
+                marks: [60, 70, 75]
+            },
+            {
+                name: "Charlie",
+                marks: [95, 92, 98]
+            }
+        ];
+
+        students.forEach(student => {
+            let total = student.marks.reduce((sum, mark) => sum + mark, 0);
+            student.average = total / student.marks.length;
+
+            document.write(`${student.name} - Average: ${student.average}<br>`);
+        });
+
+        let topper = students.reduce((top, student) =>
+            student.average > top.average ? student : top
+        );
+
+        document.write("<br>Topper:<br>");
+        document.write(`${topper.name} - Average: ${topper.average}<br>`);
+
+        let above80 = students
+            .filter(student => student.average > 80)
+            .map(student => student.name);
+
+        document.write("<br>Students with Average Above 80:<br>");
+        document.write(above80.join(", "));
+
+
+    </script>
+</body>
+</html>
