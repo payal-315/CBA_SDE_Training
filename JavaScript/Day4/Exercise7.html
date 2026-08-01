@@ -1,0 +1,45 @@
+<!-- Exercise 7: Array Transformation Challenge
+Given: const numbers = [10, 20, 30, 40, 50];
+Double every number using map(). Remove the first element using shift(). Add 5 and 15 at the beginning using unshift().
+Replace 30 and 40 with 100 and 200 using splice(). -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [10, 20, 30, 40, 50];
+
+        let doubled = numbers.map(num => num * 2);
+
+        document.write("Doubled Array: [ ");
+        document.write(doubled.join(", ") + " ]<br><br>");
+
+
+        numbers.shift();
+
+        document.write("After shift: [ ");
+        document.write(numbers.join(", ") + " ]<br><br>");
+
+
+        numbers.unshift(5, 15);
+
+        document.write("After unshift(5, 15): [ ");
+        document.write(numbers.join(", ") + " ]<br><br>");
+
+        let indexes = numbers.indexOf(30);
+
+        if (indexes !== -1) {
+            numbers.splice(indexes, 2, 100, 200);
+        }
+
+        document.write("After splice(): [ ");
+        document.write(numbers.join(", ")+" ]");
+    </script>
+</body>
+</html>
