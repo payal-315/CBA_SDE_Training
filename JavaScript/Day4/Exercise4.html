@@ -1,0 +1,53 @@
+<!-- Exercise 4: Nested Object Manipulation
+Given: const company = {name: "ABC Ltd", address: {city: "Mumbai",state: "Maharashtra"},departments: {IT: 50,HR: 10,Finance: 15}};
+Print the company city. Add a new department called "Marketing". Update the number of employees in IT. 
+Display all department names using Object.keys(). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const company = {
+            name: "ABC Ltd",
+            address: {
+                city: "Mumbai",
+                state: "Maharashtra"
+            },
+            departments: {
+                IT: 50,
+                HR: 10,
+                Finance: 15
+            }
+        };
+
+        document.write("Company City: " + company.address.city + "<br>");
+
+        company.departments.Marketing = 20;
+
+        document.write("<br>Departments After Adding Marketing:</b><br>");
+        for (let dept in company.departments) {
+            document.write(`${dept}: ${company.departments[dept]}<br>`);
+        }
+
+
+        company.departments.IT = 60;
+
+        document.write("<br>After Updating IT Employees:<br>");
+        document.write("IT: " + company.departments.IT + "<br><br>");
+
+
+        let departmentNames = Object.keys(company.departments);
+
+        document.write("Department Names:<br>");
+        departmentNames.forEach(dept => {
+            document.write(dept + "<br>");
+        });
+
+    </script>
+</body>
+</html>
