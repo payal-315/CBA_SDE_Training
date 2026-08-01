@@ -1,0 +1,52 @@
+<!-- Exercise 1: Employee Salary Analysis
+Create an array of employee objects. 
+const employees = [{ id: 1, name: "John", salary: 50000, department: "IT" }, { id: 2, name: "Emma", salary: 70000, department: "HR" },
+              { id: 3, name: "David", salary: 60000, department: "IT" },{ id: 4, name: "Sophia", salary: 80000, department: "Finance" }];
+
+Find all employees from the IT department. Calculate the total salary of all employees. Find the employee with the highest salary.
+Create a new array containing only employee names. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const employees = [
+            { id: 1, name: "John", salary: 50000, department: "IT" },
+            { id: 2, name: "Emma", salary: 70000, department: "HR" },
+            { id: 3, name: "David", salary: 60000, department: "IT" },
+            { id: 4, name: "Sophia", salary: 80000, department: "Finance" }
+        ];
+
+        
+        let ITemp = employees.filter(emp => emp.department === "IT");
+        ITemp.forEach(emp => {
+            document.write(`ID: ${emp.id}, Name: ${emp.name}, Salary: ${emp.salary}, Department: ${emp.department}<br>`);
+        });
+        
+
+        let total=0;
+        for(let emp of employees){
+            total+=emp.salary
+        }
+        document.write("<br>Total Salary: "+total);
+
+
+        let highest=employees[0];
+        for(let emp of employees){
+            if(emp.salary>highest.salary){
+                highest=emp;
+            }
+        }
+        document.write( "<br>"+`Highest Salary Employee: ${highest.name}<br> Salary: ${highest.salary}<br>Department: ${highest.department}`);
+
+
+        let names=employees.map(emp=>emp.name)
+        document.write("Employee Names: "+names)
+    </script>
+</body>
+</html>
