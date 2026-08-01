@@ -1,0 +1,60 @@
+<!-- Exercise 5: Shopping Cart System
+Create a shopping cart. const cart = [{ name: "Phone", price: 20000, quantity: 1 }, { name: "Headphones", price: 2000, quantity: 2 },
+                                      { name: "Charger", price: 1000, quantity: 3 }];
+Calculate the total cart value. Remove the Charger item. Add a new item. Create an array of product names using map(). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cart = [
+            { name: "Phone", price: 20000, quantity: 1 },
+            { name: "Headphones", price: 2000, quantity: 2 },
+            { name: "Charger", price: 1000, quantity: 3 }
+        ];
+
+
+        let totals = cart.reduce((sum, item) => {
+            return sum + (item.price * item.quantity);
+        }, 0);
+
+        document.write("<br>Total Cart Value:</b> ₹" + totals + "<br>");
+
+
+        let index = cart.findIndex(item => item.name === "Charger");
+
+        if (index !== -1) {
+            cart.splice(index, 1);
+        }
+
+        document.write("<br>After Removing Charger:<br>");
+        cart.forEach(item => {
+            document.write(`${item.name} - Qty: ${item.quantity}<br>`);
+        });
+
+
+        cart.push({
+            name: "Power Bank",
+            price: 1500,
+            quantity: 2
+        });
+
+        document.write("<br>After Adding Power Bank:<br>");
+        cart.forEach(item => {
+            document.write(`${item.name} - Qty: ${item.quantity}<br>`);
+        });
+
+
+        let productNames = cart.map(item => item.name);
+
+        document.write("<br>Product Names:<br>");
+        document.write(productNames.join(", "));
+
+    </script>
+</body>
+</html>
