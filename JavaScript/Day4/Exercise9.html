@@ -1,0 +1,63 @@
+<!-- Exercise 9: Library Management System
+Create an object: const library = {books: [{ title: "JavaScript", available: true },{ title: "Python", available: false },
+                                  { title: "Java", available: true }]};
+Display all available books. Add a new book. Mark Python as available. Print all book titles using map(). -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const library = {
+            books: [
+                { title: "JavaScript", available: true },
+                { title: "Python", available: false },
+                { title: "Java", available: true }
+            ]
+        };
+
+
+        let availableBooks = library.books.filter(book => book.available === true);
+
+        document.write("<br>Available Books:</b><br>");
+        availableBooks.forEach(book => {
+            document.write(book.title + "<br>");
+        });
+
+
+        library.books.push({
+            title: "C++",
+            available: true
+        });
+
+        document.write("<br>After Adding New Book:<br>");
+        library.books.forEach(book => {
+            document.write(book.title + " - Available: " + book.available + "<br>");
+        });
+
+
+        let pythonBook = library.books.find(book => book.title === "Python");
+
+        if (pythonBook) {
+            pythonBook.available = true;
+        }
+
+        document.write("<br>After Updating Python:<br>");
+        library.books.forEach(book => {
+            document.write(book.title + " - Available: " + book.available + "<br>");
+        });
+
+
+        let bookTitles = library.books.map(book => book.title);
+
+        document.write("<br>All Book Titles:<br>");
+        document.write(bookTitles.join(", "));
+
+    </script>
+</body>
+</html>
