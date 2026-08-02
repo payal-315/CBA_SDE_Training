@@ -1,0 +1,97 @@
+<!-- Exercise 11: Create your own implementation of the following methods without using built-in functions:
+myPush(), myPop(), myMap(), myForEach(), myObjectKeys() -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myPush(arr, value) {
+            arr[arr.length] = value;
+            return arr.length;
+        }
+
+
+        function myPop(arr) {
+            if (arr.length === 0) {
+                return undefined;
+            }
+
+            let lastElement = arr[arr.length - 1];
+            arr.length = arr.length - 1;
+
+            return lastElement;
+        }
+
+
+        function myMap(arr, callback) {
+            let result = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                result[i] = callback(arr[i], i, arr);
+            }
+
+            return result;
+        }
+
+
+        function myForEach(arr, callback) {
+            for (let i = 0; i < arr.length; i++) {
+                callback(arr[i], i, arr);
+            }
+        }
+
+
+        function myObjectKeys(obj) {
+            let keys = [];
+
+            for (let key in obj) {
+                keys[keys.length] = key;
+            }
+
+            return keys;
+        }
+
+
+        let number = [10, 20, 30];
+        myPush(number, 40);
+
+        document.write("<br>After myPush: "+ number);
+
+
+
+        let removed = myPop(number);
+        document.write("<br><br>Removed element: ", removed);
+        document.write("<br><br>After myPop: ", number);
+
+
+
+        let double = myMap(number, function(num) {
+            return num * 2;
+        });
+        document.write("<br><br>myMap result: ", double);
+
+
+
+        document.write("<br><br>myForEach result: ");
+        myForEach(number, function(num) {
+            document.write(num);
+        });
+
+
+
+        let users = {
+            name: "Rahul",
+            age: 25,
+            city: "Mumbai"
+        };
+
+        document.write("<br><br>myObjectKeys result: ", myObjectKeys(user));
+
+    </script>
+</body>
+</html>
