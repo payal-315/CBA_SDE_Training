@@ -1,0 +1,93 @@
+<!-- Exercise 10: E-commerce Dashboard (Advanced)
+Given: const orders = [{id: 1,customer: "John",products: [{ name: "Laptop", price: 50000 },{ name: "Mouse", price: 500 }]},
+                      {id: 2,customer: "Emma",products: [{ name: "Phone", price: 30000 },{ name: "Headphones", price: 2000 }]}];
+Calculate the total amount spent by each customer. Find the customer who spent the most. Create an array containing all product names.
+Count the total number of products sold. Display products costing more than ₹10,000. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const orderss = [
+            {
+                id: 1,
+                customer: "John",
+                products: [
+                    { name: "Laptop", price: 50000 },
+                    { name: "Mouse", price: 500 }
+                ]
+            },
+            {
+                id: 2,
+                customer: "Emma",
+                products: [
+                    { name: "Phone", price: 30000 },
+                    { name: "Headphones", price: 2000 }
+                ]
+            }
+        ];
+
+
+        let customerSpending = orderss.map(order => {
+            let total = order.products.reduce((sum, product) => {
+                return sum + product.price;
+            }, 0);
+
+            return {
+                customer: order.customer,
+                totalSpent: total
+            };
+        });
+
+        document.write("<br>Total Amount Spent By Each Customer:</b><br>");
+        customerSpending.forEach(customer => {
+            document.write(`${customer.customer}: ₹${customer.totalSpent}<br>`);
+        });
+
+
+
+        let highestSpender = customerSpending.reduce((max, customer) => {
+            return customer.totalSpent > max.totalSpent ? customer : max;
+        });
+
+        document.write("<br>Highest Spender: ");
+        document.write(`${highestSpender.customer} spent ₹${highestSpender.totalSpent}<br>`);
+
+
+
+        let allProducts = orderss.flatMap(order =>
+            order.products.map(product => product.name)
+        );
+
+        document.write("<br>All Product Names: [ ");
+        document.write(allProducts.join(", ") + " ]<br>");
+
+
+
+        let totalProducts = orderss.reduce((count, order) => {
+            return count + order.products.length;
+        }, 0);
+
+        document.write("<br>Total Products Sold: ");
+        document.write(totalProducts + "<br>");
+
+
+
+        let expensiveProducts = orderss.flatMap(order =>
+            order.products.filter(product => product.price > 10000)
+        );
+
+        document.write("<br>Products Above ₹10,000:<br>");
+        expensiveProducts.forEach(product => {
+            document.write(`${product.name} - ₹${product.price}<br>`);
+        });
+
+    </script>
+</body>
+</html>
