@@ -1,0 +1,35 @@
+<!-- Exercise 3: Student Result System (Promises)
+Problem Statement: A student's marks are stored in a variable. 
+Rules: Marks ≥ 35 → Resolve withStudent Passed, Marks < 35 → Reject withStudent Failed. Display the result using .then() and .catch().
+Example: let marks = 80; Expected Output: Student Passed -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result System</title>
+</head>
+<body>
+
+<script>
+
+    let marks = 80;   
+
+    let result = new Promise(function(resolve, reject) {
+        if (marks >= 35) {
+            resolve("Student Passed");
+        } else {
+            reject("Student Failed");
+        }
+    });
+
+    result
+        .then(function(message) {
+            document.write(message);
+        })
+        .catch(function(error) {
+            document.write(error);
+        });
+</script>
+
+</body>
+</html>
