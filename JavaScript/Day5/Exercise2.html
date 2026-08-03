@@ -1,0 +1,40 @@
+<!-- Exercise 2: ATM Transaction (Promises)
+Problem Statement: Create a Promise to simulate an ATM withdrawal.
+Conditions: If the account balance is greater than or equal to ₹5000, resolve the promise with:Withdrawal Successful 
+            Otherwise reject the promise with:Insufficient Balance. Handle the result using: .then() .catch()
+Sample Output (Success): Withdrawal Successful
+Sample Output (Failure): Insufficient Balance -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM Transaction</title>
+</head>
+<body>
+
+<script>
+    document.write("<h1>Exercise 2</h1>")
+    let balance = 7000;   
+
+    let atm = new Promise(function(resolve, reject) {
+        if (balance >= 5000) {
+            resolve("Withdrawal Successful");
+        } else {
+            reject("Insufficient Balance");
+        }
+    });
+
+    atm
+        .then(function(result) {
+            document.write(result);
+        })
+        .catch(function(error) {
+            document.write(error);
+        });
+</script>
+
+</body>
+</html>
+
+
