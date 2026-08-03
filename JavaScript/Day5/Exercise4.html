@@ -1,0 +1,63 @@
+<!-- Exercise 4: Online Shopping Order (Promise Chaining)
+Problem Statement: Create three functions that return Promises. Order Placed, Payment Successful, Product Shipped.
+Execute them one after another using Promise chaining (.then()).
+Expected Output: Order Placed, Payment Successful, Product Shipped, Order Completed
+Add a rejection if payment fails and handle it using .catch(). -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shopping Order</title>
+</head>
+<body>
+
+<script>
+  
+    function placeOrder() {
+        return new Promise(function(resolve, reject) {
+            resolve("Order Placed");
+        });
+    }
+
+    function makePayment() {
+        return new Promise(function(resolve, reject) {
+            let payment = false;   
+
+            if (payment) {
+                resolve("Payment Successful");
+            } else {
+                reject("Payment Failed");
+            }
+        });
+    }
+
+    function shipProduct() {
+        return new Promise(function(resolve, reject) {
+            resolve("Product Shipped");
+        });
+    }
+
+    placeOrder()
+        .then(function(result) {
+            document.write(result + "<br>");
+            return makePayment();
+        })
+        .then(function(result) {
+            document.write(result + "<br>");
+            return shipProduct();
+        })
+        .then(function(result) {
+            document.write(result + "<br>");
+            document.write("Order Completed");
+        })
+        .catch(function(error) {
+            document.write(error);
+        });
+</script>
+
+</body>
+</html>
+
+
+
