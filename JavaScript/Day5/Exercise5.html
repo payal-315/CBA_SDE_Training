@@ -1,0 +1,40 @@
+<!-- Exercise 5: Weather App (Fetch API + Promises)
+Problem Statement: Use the Fetch API to retrieve users from: https://jsonplaceholder.typicode.com/users
+Tasks: Fetch the data. Convert the response to JSON.  Print: Name, Email, City.
+Expected Output:  Name : Leanne Graham, Email : Sincere@april.biz, City : Gwenborough
+                  Name : Ervin Howell, Email : Shanna@melissa.tv, City : Wisokyburgh
+Use: fetch(),  .then(),  .catch() -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App (Fetch API)</title>
+</head>
+<body>
+
+<script>
+    
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(users) {
+            document.write("<h1>Exercise 5</h1>")
+            users.forEach(function(user) {
+                document.write("Name : " + user.name + "<br>");
+                document.write("Email : " + user.email + "<br>");
+                document.write("City : " + user.address.city + "<br><br>");
+            });
+        })
+        .catch(function(error) {
+            document.write("Error: " + error);
+        });
+</script>
+
+</body>
+</html>
+
+
+
+
