@@ -1,0 +1,49 @@
+Problem Statement: Movie Ticket Booking System
+
+<!-- Exercise 6: Simulate the following process: 
+Check ticket availability (), If available, book the ticket ()
+Print: Ticket Booked Successfully. If tickets are unavailable: House Full -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking System</title>
+</head>
+<body>
+
+<script>
+    document.write("<h1>MIXED CONCEPT</h1>")
+    function checkAvailability() {
+        return new Promise(function(resolve, reject) {
+            let available = false;  
+
+            if (available) {
+                resolve("Ticket Available");
+            } else {
+                reject("House Full");
+            }
+        });
+    }
+
+    function bookTicket() {
+        return new Promise(function(resolve, reject) {
+            resolve("Ticket Booked Successfully");
+        });
+    }
+
+    checkAvailability()
+        .then(function(result) {
+            document.write(result + "<br>");
+            return bookTicket();
+        })
+        .then(function(result) {
+            document.write(result);
+        })
+        .catch(function(error) {
+            document.write(error);
+        });
+</script>
+
+</body>
+</html>
