@@ -1,0 +1,50 @@
+<!-- Exercise 1: Food Delivery App (Callbacks)
+Problem Statement: You are developing a food delivery application. Perform the following tasks using :
+Place an order (2 seconds), Prepare the food (3 seconds), Deliver the food (2 seconds), Display
+Expected Output: Order Placed...Food is being prepared...Food is out for delivery...Food Delivered Successfully!
+Use setTimeout() and callback functions -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Delivery App</title>
+</head>
+<body>
+
+    
+<script>
+    
+    function placeOrder(callback) {
+        setTimeout(function () {
+            document.write("<h1>Exercise 1</h1>")
+            document.write("Order Placed...<br>");
+            callback();
+        }, 2000);
+        document.write("wait for 2 seconds");
+    }
+
+    function prepareFood(callback) {
+        setTimeout(function () {
+            document.write("Food is being prepared...<br>");
+            callback();
+        }, 3000);
+    }
+
+    function deliverFood(callback) {
+        setTimeout(function () {
+            document.write("Food is out for delivery...<br>");
+            callback();
+        }, 2000);
+    }
+
+    placeOrder(function () {
+        prepareFood(function () {
+            deliverFood(function () {
+                document.write("Food Delivered Successfully!");
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
