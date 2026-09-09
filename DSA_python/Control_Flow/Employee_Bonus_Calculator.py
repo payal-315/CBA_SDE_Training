@@ -1,3 +1,9 @@
+# 1. Employee Bonus Calculator
+# Write a Python program that accepts an employee's and (1–5). Calculate the bonus according to:
+# Rating 5 → 20% of salary, Rating 4 → 15%, Rating 3 → 10%, Rating 2 → 5%, Rating 1 → No bonus
+# Additionally: If salary is below ₹30,000, add a fixed ₹2,000 bonus. Display the final salary including the bonus.
+
+
 name = input("Enter employee name: ")
 salary = float(input("Enter salary: "))
 rating = int(input("Enter performance rating (1-5): "))
