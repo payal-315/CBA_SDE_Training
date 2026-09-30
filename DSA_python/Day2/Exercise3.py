@@ -6,8 +6,7 @@
 # Savings account earns interest. Current account has overdraft limit. Maintain transaction history.
 
 
-class Account:
-    
+class Account:  
     def __init__(self, acc_no, name, balance):
         self.acc_no = acc_no
         self.name = name
